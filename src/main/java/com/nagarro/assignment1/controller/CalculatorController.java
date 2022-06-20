@@ -21,22 +21,21 @@ public class CalculatorController {
 		String op=request.getParameter("op");
 		op.toLowerCase();
 		int res = 0;
-		switch(op) {
-		case "add":
+		if(op=="add"){
 			res=service.getAdd(i,j);
-		    break;
-		case "sub":
+		    }
+		else if(op=="sub"){
 			res=service.getSub(i,j);
-			break;
-		case "div":
+			}
+		else if(op=="div"){
 			res=service.getDiv(i,j);
-			break;
-		case "mul":
+			}
+		else if(op=="mul"){
 			res=service.getMul(i,j);
-			break;
-		default:
+			}
+		else{
 			
-			break;
+			res=0;
 		}
 			ModelAndView mv= new ModelAndView();
 			mv.addObject("result",res);
